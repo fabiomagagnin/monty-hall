@@ -9,7 +9,7 @@ The intuitive answer is: Now I have a new game where the odds are 50%, so it doe
 
 The correct answer is: The best option is switch to door number 2, switching your probabily will be 66,6% while remain it will be 33,3%.
 
-You can find the detailed explanation here, but I like to think this way:
+You can find the detailed explanation [here](https://en.wikipedia.org/wiki/Monty_Hall_problem).
 # What is this code?
 This code is a simulation to prove that best option is always switching to the other door.
 It simulates the game one milion times and shows that always switching you would win on 66,66% of times.
