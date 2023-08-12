@@ -14,30 +14,10 @@ const randomPick = (min, max) => {
  * @returns 
  */
 const runGame = (switchDoor) => {
-    let concurrentPick = randomPick(0, 2)
-    let hostPick = null
-
-    if (doors[concurrentPick] === CAR) {
-        if (concurrentPick === 0) {
-            hostPick = randomPick(1, 2)
-        } else if (concurrentPick === 1) {
-            const random = randomPick(0, 1)
-            hostPick = random === 0 ? random : random + 1
-        } else if (concurrentPick === 2) {
-            hostPick = randomPick(0, 1)
-        }
-    } else {
-        const otherOption = [0, 1, 2].filter(item => item !== concurrentPick && doors[item] !== CAR)[0]
-        hostPick = otherOption
-    }
-
-    if (switchDoor) {
-        const otherOption = [0, 1, 2].filter(item => item !== concurrentPick && item != hostPick)[0]
-        concurrentPick = otherOption
-    }
-
-    const concurrentWon = doors[concurrentPick] === 'car'
-    return concurrentWon
+    const concurrentPick = randomPick(0, 2)
+    const carSelected = doors[concurrentPick] === CAR
+    const result = (carSelected && !switchDoor) || (!carSelected && switchDoor)
+    return result
 }
 
 const runSample = (switchDoor) => {

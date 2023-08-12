@@ -8,16 +8,16 @@
 
 In this case, what is the best option, keep with door number one or switch to number two?!
 
-The intuitive answer is: Now I have a new game where the odds are 50%, so it does'nt matter!
+The intuitive answer is: Now I have a new game where the odds are 50%, so it doesn't matter!
 
-The correct answer is: The best option is switch to door number 2, switching your probabily will be 66,6% while remain it will be 33,3%.
+The correct answer is: The best option is switch to door number 2, switching, your probabily will be 66,6% while remaining on port one it will be 33,3%.
 
 You can find the detailed explanation [here](https://en.wikipedia.org/wiki/Monty_Hall_problem), but one way I like to think about it is: On the first moment when all doors were closed, my chances were 33.3%, so if the most probable happened (I selected a goat), and knowing the host will always open a door with a goat, then switching is better!
 # What is this code?
 This code is a simulation to prove that best option is always switching to the other door.
 It simulates the game one milion times and shows that always switching you would win on 66,66% of times.
 # How to run?
-Once you have Node JS, just run `node index.js`. You will see something like this:
+Once you have Node JS, just run `node index.js` or `node index-optimized.js`. You will see something like this:
 ```
 --- Not switching the door ---
  runs: 1000000
@@ -29,3 +29,5 @@ losts: 666587 (0.666587)
  wins: 666074 (0.666074)
 losts: 333926 (0.333926)
 ```
+# index and index-optimized
+`index.js` is the first version I wrote, `index-optimized.js` is the second, the difference is in the `runGame`  function, while the first is more like things would happen in real life, the second focus on what metters which is: "Does the concurrent picked the car on his first choice?" If yes then switching the door is bad, otherwhise it's good.
